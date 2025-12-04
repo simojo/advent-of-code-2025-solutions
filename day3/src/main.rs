@@ -15,8 +15,9 @@ fn main() {
         let mut i0: usize = 0;
         let mut i1: usize;
         let mut d: [u8; N_BANKS as usize] = [0; N_BANKS as usize];
+        let linelen = line.len();
         for i in 0..N_BANKS {
-            i1 = line.len()-(N_BANKS as usize - (i as usize));
+            i1 = linelen-(N_BANKS as usize - (i as usize));
             d[i as usize] = line[i0..=i1]
                 .as_bytes()
                 .iter()
